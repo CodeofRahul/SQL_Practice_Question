@@ -32,6 +32,6 @@ Select * from emp order by deptno asc ,job desc;
 
 **Answer:**
 
-``
+```
 Select distinct job from  emp order by job desc;
-``
+```
