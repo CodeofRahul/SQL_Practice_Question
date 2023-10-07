@@ -1,5 +1,4 @@
-### Question 1
-Display all the information of the EMP table?
+1. Display all the information of the EMP table?
 
 **Answer:**
 ```sql
