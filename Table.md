@@ -16,3 +16,13 @@
 | 7900 | JAMES | CLERK | 7698 | 03-DEC-81 | 950 |  | 30 |
 | 7902 | FORD | ANALYST | 7566 | 03-DEC- 81 | 3000 |  | 20 |
 | 7934 | MILLER | CLERK | 7782 | 23-JAN-82 | 1300 |  | 10 |
+
+
+**Dept Table :**
+
+| DEPTNO | DNAME | LOC |
+| --- | --- | --- |
+| 10 | ACCOUNTING | NEWYORK |
+| 20 | RESEARCH | DALLAS |
+| 30 | SALES | CHICAGO |
+| 40 | OPERATIONS | BOSTON |
