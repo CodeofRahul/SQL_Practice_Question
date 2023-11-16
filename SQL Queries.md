@@ -417,3 +417,40 @@ where to_char(hiredate,'yyyy') != '1981';
 SELECT * FROM emp
 where to_char(hiredate,'yyyy') not in ('1981')
 ```
+
+**32. List the emps whose Empno not starting with digit78.**
+
+**Answer:**
+
+```sql
+
+SELECT * FROM emp
+where empno::text like '78%';
+```
+
+**33. List the emps who are working under ‘MGR’.**
+
+**Answer 1:**
+
+```sql
+
+SELECT e.ename as emp,m.ename as mgr FROM emp as e,emp as m
+where e.mgr =m.empno;
+```
+
+**Answer 2:**
+
+```sql
+
+SELECT concat(e.ename,' works for ',m.ename) from emp as e,emp as m
+where e.mgr = m.empno;
+```
+
+**Answer 3:**
+
+```sql
+
+SELECT concat(e.ename,' has an employee ',m.ename) 
+FROM emp as e,emp as m
+WHERE m.mgr = e.empno;
+```
