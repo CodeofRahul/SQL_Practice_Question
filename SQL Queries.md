@@ -454,3 +454,38 @@ SELECT concat(e.ename,' has an employee ',m.ename)
 FROM emp as e,emp as m
 WHERE m.mgr = e.empno;
 ```
+
+**34. List the emps who joined in any year but not belongs to the month of
+April.**
+
+**Answer 1:**
+
+```sql
+
+SELECT * FROM emp
+WHERE to_char(hiredate,'mon') <> 'apr';
+```
+
+**Answer 2:**
+
+```sql
+
+Select * from emp
+Where to_char(hiredate,'mon') !='apr';
+```
+
+**Answer 3:**
+
+```sql
+
+select * from emp
+where to_char(hiredate,'month') not like 'apr%';
+```
+
+**Answer 4:**
+
+```sql
+
+Select * from emp
+Where to_char(hiredate,'mon') not in ('apr');
+```
