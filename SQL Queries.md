@@ -489,3 +489,13 @@ where to_char(hiredate,'month') not like 'apr%';
 Select * from emp
 Where to_char(hiredate,'mon') not in ('apr');
 ```
+
+**35. List all the Clerks of Deptno 20.**
+
+**Answer:**
+
+```sql
+
+Select * from emp
+where deptno = 20 and job = 'clerk';
+```
