@@ -516,3 +516,14 @@ Where deptno in (10,30) and extract(year from hiredate) =1981;
 Select * from emp
 Where deptno in (10,30) and to_char(hiredate,'yyyy') in ('1981');
 ```
+
+**37. Display the details of SMITH.**
+
+**Answer:**
+
+```sql
+Select * from emp as e
+join dept as d
+on e.deptno = d.deptno
+Where ename = 'smith';
+```
