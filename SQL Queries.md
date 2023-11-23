@@ -499,3 +499,20 @@ Where to_char(hiredate,'mon') not in ('apr');
 Select * from emp
 where deptno = 20 and job = 'clerk';
 ```
+
+**36. List the emps of Deptno 30 or 10 joined in the year 1981.**
+
+**Answer 1:**
+
+```sql
+
+Select * from emp
+Where deptno in (10,30) and extract(year from hiredate) =1981;
+```
+
+**Answer 2:**
+
+```sql
+Select * from emp
+Where deptno in (10,30) and to_char(hiredate,'yyyy') in ('1981');
+```
