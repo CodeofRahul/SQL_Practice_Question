@@ -527,3 +527,20 @@ join dept as d
 on e.deptno = d.deptno
 Where ename = 'smith';
 ```
+
+**38. Display the location of SMITH.**
+
+**Answer 1:**
+```sql
+Select e.ename as name , d.loc as location from emp as e
+join dept as d
+on e.deptno = d.deptno
+where ename = 'smith'
+```
+
+**Answer 2:**
+```sql
+Select e.ename as name , d.loc as location from emp as e
+, dept as d
+where ename = 'smith' and e.deptno = d.deptno;
+```
