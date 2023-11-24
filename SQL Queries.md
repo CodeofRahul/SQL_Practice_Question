@@ -544,3 +544,16 @@ Select e.ename as name , d.loc as location from emp as e
 , dept as d
 where ename = 'smith' and e.deptno = d.deptno;
 ```
+
+**39. List the total information of EMP table along with DNAME and Loc of
+all the emps Working Under ‘ACCOUNTING’ & ‘RESEARCH’ in the asc
+Deptno.**
+
+**Answer:**
+```sql
+Select e.*,d.dname,d.loc from emp as e
+join dept as d
+on e.deptno = d.deptno
+Where d.dname in ('accounting','research')
+Order by e.deptno asc;
+```
