@@ -557,3 +557,20 @@ on e.deptno = d.deptno
 Where d.dname in ('accounting','research')
 Order by e.deptno asc;
 ```
+
+**40. List the Empno, Ename, Sal, Dname of all the ‘MGRS’ and ‘ANALYST’
+working in New York, Dallas with an exp more than 7 years without receiving
+the Comm asc order of Loc.**
+
+**Answer:**
+
+```sql
+Select e.empno, e.ename, e.sal, d.dname
+From emp as e
+join dept as d
+on e.deptno = d.deptno
+Where job in ('manager','analyst') and d.loc in ('new yourk','dallas')
+and (extract(year from now()) - extract(year from hiredate)) >= 7
+and e.comm is null
+Order by loc asc;
+```
