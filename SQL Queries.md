@@ -596,3 +596,12 @@ e.sal not in (3000,2800) and e.job != 'manager'
 and (e.empno:: text Like '__7%' or e.empno:: text like '__8%'))
 order by e.deptno asc, e.job desc;
 ```
+
+**42. List the details of the Depts along with Empno, Ename or without the
+emps.**
+
+**Answer:**
+```sql
+Select d.*, e.empno, e.ename from dept as d
+Left join emp as e on d.deptno = e.deptno
+```
