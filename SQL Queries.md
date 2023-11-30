@@ -574,3 +574,25 @@ and (extract(year from now()) - extract(year from hiredate)) >= 7
 and e.comm is null
 Order by loc asc;
 ```
+
+**41. Display the Empno, Ename, Sal, Dname, Loc, Deptno, Job of all emps
+working at CHICAGO or working for ACCOUNTING dept with Annual
+Sal>28000, but the Sal should not be=3000 or 2800 who doesn’t belongs to the
+Manager and whose empno is having a digit ‘7’ or ‘8’ in 3rd position in the asc order of
+Deptno and desc order of job.**
+
+**Answer:**
+
+```sql
+Select e.empno,e.ename,e.sal,d.dname,d.loc,d.deptno,e.job
+From emp as e
+join dept as d
+on e.deptno = d.deptno
+where (d.loc = 'chicago' or d.dname = 'accounting')
+and e.empno in (
+Select e.empno from emp as e
+Where (e.sal*12) > 28000 and 
+e.sal not in (3000,2800) and e.job != 'manager'
+and (e.empno:: text Like '__7%' or e.empno:: text like '__8%'))
+order by e.deptno asc, e.job desc;
+```
