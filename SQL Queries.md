@@ -615,3 +615,12 @@ SELECT ename, sal from emp
 where sal > (SELECT sal from emp
 where ename = 'blake')
 ```
+
+**44. List the emps whose Jobs are same as ALLEN.**
+
+**Answer:**
+```sql
+SELECT ename,job from emp
+WHERE job in (SELECT job from emp
+where ename = 'allen');
+```
