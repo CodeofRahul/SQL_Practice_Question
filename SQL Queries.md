@@ -605,3 +605,13 @@ emps.**
 Select d.*, e.empno, e.ename from dept as d
 Left join emp as e on d.deptno = e.deptno
 ```
+
+**43. List the details of the emps whose Salaries more than the employee
+BLAKE.**
+
+**Answer:**
+```sql
+SELECT ename, sal from emp
+where sal > (SELECT sal from emp
+where ename = 'blake')
+```
