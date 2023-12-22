@@ -627,6 +627,7 @@ where ename = 'allen');
 
 **45. List the emps who are senior to King.**
 
+**Answer:**
 ```sql
 Select ename, hiredate from emp
 where hiredate < (Select hiredate from emp
