@@ -624,3 +624,12 @@ SELECT ename,job from emp
 WHERE job in (SELECT job from emp
 where ename = 'allen');
 ```
+
+**45. List the emps who are senior to King.**
+
+```sql
+Select ename, hiredate from emp
+where hiredate < (Select hiredate from emp
+where ename = 'king');
+```
+
