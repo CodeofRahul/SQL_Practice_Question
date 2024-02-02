@@ -634,3 +634,14 @@ where hiredate < (Select hiredate from emp
 where ename = 'king');
 ```
 
+**46. List the Emps who are senior to their own MGRS.**
+
+**Answer:**
+```sql
+Select e.ename as employee_name,m.ename as manager_name
+from emp as e
+join emp as m
+on e.mgr = m.empno
+where e.hiredate < m.hiredate;
+```
+
