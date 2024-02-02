@@ -645,3 +645,14 @@ on e.mgr = m.empno
 where e.hiredate < m.hiredate;
 ```
 
+**47. List the Emps of Deptno 20 whose Jobs are same as Deptno10.**
+
+**Answer:**
+```sql
+Select *
+From emp
+Where job in (Select job
+From emp
+Where deptno = 10) and deptno =20;
+```
+
